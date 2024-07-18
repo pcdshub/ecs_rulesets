@@ -1,0 +1,43 @@
+{
+  "id": 1051884,
+  "name": "protect_default",
+  "target": "branch",
+  "source_type": "Organization",
+  "source": "pcdshub",
+  "enforcement": "evaluate",
+  "conditions": {
+    "repository_property": {
+      "exclude": [],
+      "include": [
+        {
+          "name": "protect_default",
+          "source": "custom",
+          "property_values": [
+            "true"
+          ]
+        }
+      ]
+    },
+    "ref_name": {
+      "exclude": [
+        "refs/heads/master",
+        "refs/heads/gh-pages"
+      ],
+      "include": [
+        "~ALL"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    },
+    {
+      "type": "non_fast_forward"
+    },
+    {
+      "type": "creation"
+    }
+  ],
+  "bypass_actors": []
+}
