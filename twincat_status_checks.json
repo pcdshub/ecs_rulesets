@@ -1,0 +1,49 @@
+{
+  "id": 1051917,
+  "name": "twincat_status_checks",
+  "target": "branch",
+  "source_type": "Organization",
+  "source": "pcdshub",
+  "enforcement": "evaluate",
+  "conditions": {
+    "repository_property": {
+      "exclude": [],
+      "include": [
+        {
+          "name": "required_checks",
+          "source": "custom",
+          "property_values": [
+            "TwinCAT Standard"
+          ]
+        }
+      ]
+    },
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH",
+        "refs/heads/master"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "required_status_checks": [
+          {
+            "context": "standard / Documentation / Python 3.9: documentation building"
+          },
+          {
+            "context": "standard / pragma linting / Pragma Linting"
+          },
+          {
+            "context": "standard / pytmc summary / Project Summary"
+          }
+        ]
+      }
+    }
+  ],
+  "bypass_actors": []
+}

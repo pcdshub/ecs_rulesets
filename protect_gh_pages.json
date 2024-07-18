@@ -1,0 +1,34 @@
+{
+  "id": 1051877,
+  "name": "protect_gh_pages",
+  "target": "branch",
+  "source_type": "Organization",
+  "source": "pcdshub",
+  "enforcement": "evaluate",
+  "conditions": {
+    "repository_property": {
+      "exclude": [],
+      "include": [
+        {
+          "name": "protect_gh_pages",
+          "source": "custom",
+          "property_values": [
+            "true"
+          ]
+        }
+      ]
+    },
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "refs/heads/gh-pages"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "deletion"
+    }
+  ],
+  "bypass_actors": []
+}
